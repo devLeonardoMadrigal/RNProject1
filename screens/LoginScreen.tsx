@@ -7,8 +7,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+
+type RootStackParamList = {
+  Login: undefined;
+  Home?: { name?: string };
+};
 
 const LoginScreen = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.safeArea}>
       <View style={styles.container}>
@@ -45,7 +53,10 @@ const LoginScreen = () => {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={() => navigation.navigate('Home', { name: 'Leo' })}
+        >
           <Text style={styles.loginButtonText}>Log In</Text>
         </TouchableOpacity>
 
