@@ -1,5 +1,5 @@
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { WeatherCard } from '../components/WeatherCard';
 
 type RootStackParamList = {
   Login: undefined;
@@ -21,6 +22,8 @@ const LoginScreen = () => {
     <View style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.headerContainer}>
+          <WeatherCard />
+
           <Text style={styles.logoText}>GoRMV</Text>
           <Text style={styles.subtitleText}>Move cargo, grow business.</Text>
         </View>
@@ -177,6 +180,9 @@ const styles = StyleSheet.create({
   createAccountText: {
     color: '#3B82F6',
     fontWeight: 'bold',
+  },
+  weatherContainer: {
+    backgroundColor: '#7facf4',
   },
 });
 
