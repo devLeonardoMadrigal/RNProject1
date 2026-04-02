@@ -9,14 +9,11 @@ import {
 } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { WeatherCard } from '../components/WeatherCard';
-
-type RootStackParamList = {
-  Login: undefined;
-  Home?: { name?: string };
-};
+import NavButton from '../components/NavButton';
+import { RootStackParams } from '../types/RootStackParamList';
 
 const LoginScreen = () => {
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
   return (
     <View style={styles.safeArea}>
@@ -62,6 +59,8 @@ const LoginScreen = () => {
         >
           <Text style={styles.loginButtonText}>Log In</Text>
         </TouchableOpacity>
+
+        <NavButton route="LocalStorage" />
 
         <View style={styles.optionsRow}>
           <View style={styles.checkboxContainer}>

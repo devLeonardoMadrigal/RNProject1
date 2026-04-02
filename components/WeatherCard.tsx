@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { WeatherContext } from '../store/context/WeatherContext';
 
 const WeatherCard = () => {
@@ -11,7 +11,11 @@ const WeatherCard = () => {
     }
   }, [weather, getWeather]);
 
-  return <Text style={styles.cardTitle}>Weather: {weather}</Text>;
+  return (
+    <View style={styles.card}>
+      <Text style={styles.cardTitle}>Weather: {weather}</Text>
+    </View>
+  );
 };
 
 export { WeatherCard };

@@ -15,7 +15,7 @@ import {
   Alert,
 } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParams } from '../App';
+import { RootStackParams } from '../types/RootStackParamList';
 import { NumberCard } from '../components/NumberCard';
 import { WeatherCard } from '../components/WeatherCard';
 
